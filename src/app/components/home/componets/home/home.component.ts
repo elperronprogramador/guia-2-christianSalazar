@@ -15,7 +15,7 @@ export class HomeComponent {
     const initProducts: Product[] = [
       {
         id: Date.now(),
-        titulo: 'zapatos',
+        titulo: 'zapatosss',
         description: 'hola como estas',
         img: 'https://picsum.photos/200/200?r=43',
       },
