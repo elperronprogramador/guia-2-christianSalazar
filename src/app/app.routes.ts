@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router';
-
 import { LayoutComponent } from './components/layout/layout.component';
 import { AsideComponent } from './aside/aside.component';
 import { FooterComponent } from './shared/componets/footer/footer.component';
