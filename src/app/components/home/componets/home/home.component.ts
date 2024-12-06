@@ -31,6 +31,18 @@ export class HomeComponent {
         description: 'hola como estas',
         img: 'https://picsum.photos/200/200?r=41',
       },
+      {
+        id: Date.now(),
+        titulo: 'pro3',
+        description: 'hola como estas',
+        img: 'https://picsum.photos/200/200?r=41',
+      },
+      {
+        id: Date.now(),
+        titulo: 'pro3',
+        description: 'hola como estas',
+        img: 'https://picsum.photos/200/200?r=41',
+      },
     ];
     this.products.set(initProducts);
   }
