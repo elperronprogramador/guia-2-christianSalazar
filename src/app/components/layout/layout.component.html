@@ -1,1 +1,24 @@
-<p>layout works!</p>
+<div class="container">
+  <header>
+    <app-header></app-header>
+  </header>
+  <section class="containerContent" style="background-color: blueviolet">
+    <aside
+      style="
+        background-color: whitesmoke;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        padding: 5px;
+      "
+    >
+      <app-aside></app-aside>
+    </aside>
+    <article class="containerArticule">
+      <app-home></app-home>
+    </article>
+  </section>
+  <footer>
+    <h1>footer</h1>
+  </footer>
+</div>

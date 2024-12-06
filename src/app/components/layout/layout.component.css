@@ -1,0 +1,13 @@
+.container {
+  display: grid;
+  min-height: 100dvh;
+  grid-template-rows: auto 1fr auto;
+}
+.containerContent {
+  height: 2600px;
+  display: flex;
+  width: 100%;
+}
+.containerArticule {
+  width: 100%;
+}

@@ -1,0 +1,32 @@
+.content-section {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: red;
+}
+
+.section-card {
+  max-width: 800px;
+  margin: 10px 0;
+  display: flex;
+}
+
+h1,
+h2,
+h3 {
+  color: #333;
+}
+
+p {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+}
+
+.section-card p {
+  text-align: justify;
+}
+
+p-card {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
