@@ -1,6 +1,5 @@
 import { Component, signal } from '@angular/core';
 import { Product } from '../../../../shared/models/products.models';
-
 import { CommonModule } from '@angular/common';
 import { OfertasComponent } from '../../../ofertas/ofertas.component';
 
@@ -16,7 +15,7 @@ export class HomeComponent {
     const initProducts: Product[] = [
       {
         id: Date.now(),
-        titulo: 'Pantalon',
+        titulo: 'zapatos',
         description: 'hola como estas',
         img: 'https://picsum.photos/200/200?r=43',
       },
