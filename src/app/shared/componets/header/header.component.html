@@ -1,18 +1,17 @@
 <div class="card">
-  <p-toolbar>
-    <div class="p-toolbar-group-start" >
-      <p-button icon="pi pi-plus" class="p-button-" />
-      <p-button icon="pi pi-print" class="mr-2" />
-      <p-button icon="pi pi-upload" />
+  <p-toolbar [style]="{'font-size': '0.875rem', 'padding': '0.5rem 1rem',}">
+    <div class="p-toolbar-group-start">
+      <p-button icon="pi pi-plus" class="mr-2 p-button-sm"text="save"/>
+      <p-button icon="pi pi-print" class="mr-2 p-button-sm" text="save" />
+      <p-button icon="pi pi-upload" class="p-button-sm" text="save"/>
     </div>
     <div class="p-toolbar-group-center">
       <span class="p-input-icon-left">
         <i class="pi pi-search"></i>
         <input pInputText placeholder="Search" />
       </span>
+
     </div>
-    <div class="p-toolbar-group-end">
-      <p-splitButton label="Save" icon="pi pi-check" [model]="items" />
-    </div>
+    <p-button label="Save" class="save-button" text="save"></p-button>
   </p-toolbar>
 </div>
