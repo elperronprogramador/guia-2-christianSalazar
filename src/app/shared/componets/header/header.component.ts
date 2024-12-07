@@ -14,6 +14,11 @@ import { MenuItem } from 'primeng/api';
 })
 export class HeaderComponent {
   items: MenuItem[] | undefined;
+  classProperty: { [klass: string]: any };
+
+  constructor() {
+    this.classProperty = { 'some-class': true };
+  }
 
   ngOnInit() {
     this.items = [
