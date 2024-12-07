@@ -1,6 +1,9 @@
-<p>home works!</p>
-<section>
+<section class="section" style="background-color: black;">
   <div class="content-section">
-    <app-ofertas *ngFor="let Product of products()" [product]="Product" />
+    <div class="product-grid">
+      <ng-container *ngFor="let Product of products()">
+        <app-ofertas [product]="Product" class="product-item" />
+      </ng-container>
+    </div>
   </div>
 </section>
