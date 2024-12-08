@@ -5,6 +5,7 @@ import { FooterComponent } from './shared/componets/footer/footer.component';
 import { HeaderComponent } from './shared/componets/header/header.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
+import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 
 export const routes: Routes = [
   {
@@ -36,4 +37,8 @@ export const routes: Routes = [
     path: 'register',
     component: RegisterComponent,
   },
+  {
+    path: 'agregar',
+    component: AgregarProductoComponent,
+  }
 ];
