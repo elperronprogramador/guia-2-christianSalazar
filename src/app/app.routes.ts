@@ -4,6 +4,7 @@ import { AsideComponent } from './aside/aside.component';
 import { FooterComponent } from './shared/componets/footer/footer.component';
 import { HeaderComponent } from './shared/componets/header/header.component';
 import { LoginComponent } from './auth/components/login/login.component';
+import { RegisterComponent } from './auth/components/register/register.component';
 
 export const routes: Routes = [
   {
@@ -30,5 +31,9 @@ export const routes: Routes = [
   {
     path: 'header',
     component: HeaderComponent,
+  },
+  {
+    path: 'register',
+    component: RegisterComponent,
   },
 ];

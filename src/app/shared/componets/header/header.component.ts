@@ -4,16 +4,22 @@ import { InputTextModule } from 'primeng/inputtext';
 import { SplitButtonModule } from 'primeng/splitbutton';
 import { ToolbarModule } from 'primeng/toolbar';
 import { MenuItem } from 'primeng/api';
+import { TooltipModule } from 'primeng/tooltip';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ToolbarModule, ButtonModule, SplitButtonModule, InputTextModule],
+  imports: [ToolbarModule, ButtonModule, SplitButtonModule, InputTextModule, TooltipModule],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })
 export class HeaderComponent {
   items: MenuItem[] | undefined;
+  classProperty: { [klass: string]: any };
+
+  constructor() {
+    this.classProperty = { 'some-class': true };
+  }
 
   ngOnInit() {
     this.items = [

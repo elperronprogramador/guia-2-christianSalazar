@@ -1,0 +1,23 @@
+<form style="display: flex; justify-content: center; align-items: center; height: 100vh; background-color: bisque;">
+    <div class="card flex justify-content-center" style="padding: 30px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <p-card header="Regístrate aquí" card [style]="{width:'480px'}">
+            <div class="field" style="margin-bottom: 25px;">
+                <label style="margin-bottom: 10px;">Nombre completo</label>
+                <input type="text" pInputText class="w-full" placeholder="Escribe tu nombre" />
+            </div>
+            <div class="field" style="margin-bottom: 25px;">
+                <label style="margin-bottom: 10px;">Correo electrónico</label>
+                <input type="text" pInputText formControlName="Usuario" class="w-full" name="usuario" placeholder="Correo" />
+            </div>
+            <div class="field" style="margin-bottom: 25px;">
+                <label style="margin-bottom: 10px;">Contraseña</label>
+                <input type="password" pInputText formControlName="password" class="w-full" name="password" placeholder="Escribe una contraseña" />
+            </div>
+            <div class="field" style="margin-bottom: 25px;">
+                <label style="margin-bottom: 10px;">Confirmar Contraseña</label>
+                <input type="password" pInputText formControlName="confirmPassword" class="w-full" name="confirmPassword" placeholder="Confirma tu contraseña" />
+            </div>
+            <p-button label="Registrar" iconPos="right"></p-button>
+        </p-card>
+    </div>    
+</form>
