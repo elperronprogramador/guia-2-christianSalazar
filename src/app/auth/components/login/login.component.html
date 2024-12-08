@@ -1,1 +1,50 @@
-<p>login works!</p>
+<div class="containerLogin">
+  <p-card class="custom-card">
+    <div class="containerElements">
+      <h1>Login</h1>
+      <div class="containerInput">
+        <p-inputGroup [style]="sizeInputs">
+          <p-inputGroupAddon>
+            <i class="pi pi-user"></i>
+          </p-inputGroupAddon>
+          <p-floatLabel>
+            <input
+              [style]="sizeInputs"
+              pInputText
+              class="ng-invalid ng-dirty"
+              [(ngModel)]="value"
+            />
+            <label for="username">Username or Email</label>
+          </p-floatLabel>
+        </p-inputGroup>
+      </div>
+      <div class="containerInput">
+        <p-inputGroup [style]="sizeInputs">
+          <p-inputGroupAddon>
+            <i class="pi pi-user"></i>
+          </p-inputGroupAddon>
+          <p-floatLabel class="containerInput">
+            <p-password
+              [style]="sizeInputs"
+              pInputText
+              id="Password"
+              [(ngModel)]="value"
+            />
+            <label for="Password">Password</label>
+          </p-floatLabel>
+        </p-inputGroup>
+      </div>
+    </div>
+    <ng-template pTemplate="footer">
+      <div class="flex gap-3 mt-1">
+        <p-button
+          label="Cancel"
+          severity="secondary"
+          class="w-full"
+          styleClass="w-full "
+        />
+        <p-button label="Save" class="w-full" styleClass="w-full" />
+      </div>
+    </ng-template>
+  </p-card>
+</div>
