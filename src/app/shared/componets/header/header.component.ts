@@ -5,11 +5,19 @@ import { SplitButtonModule } from 'primeng/splitbutton';
 import { ToolbarModule } from 'primeng/toolbar';
 import { MenuItem } from 'primeng/api';
 import { TooltipModule } from 'primeng/tooltip';
+import { TreeSelectModule } from 'primeng/treeselect';
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [ToolbarModule, ButtonModule, SplitButtonModule, InputTextModule, TooltipModule],
+  imports: [
+    ToolbarModule,
+    ButtonModule,
+    SplitButtonModule,
+    InputTextModule,
+    TooltipModule,
+    TreeSelectModule,
+  ],
   templateUrl: './header.component.html',
   styleUrl: './header.component.css',
 })

@@ -1,0 +1,22 @@
+* {
+  --colorPrimary: #1b1833;
+}
+form {
+  background-color: var(--colorPrimary);
+}
+::ng-deep .custom-card {
+  display: flex;
+  justify-content: center;
+}
+p-card {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.field {
+  width: 90%;
+  text-align: start;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
