@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
+ 
 import { InputNumberModule } from 'primeng/inputnumber';
-import { ToastModule } from 'primeng/toast';
+ 
 
 @Component({
   selector: 'app-eliminar-producto',
   standalone: true,
-  imports: [ToastModule, CardModule, FormsModule, ReactiveFormsModule, ButtonModule, InputNumberModule],
+  imports: [ReactiveFormsModule ,FormsModule, ButtonModule, InputNumberModule,CardModule],
   templateUrl: './eliminar-producto.component.html',
   styleUrl: './eliminar-producto.component.css'
 })
