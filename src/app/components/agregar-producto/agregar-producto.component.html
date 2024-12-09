@@ -1,6 +1,6 @@
 
 <div class="container">
-    <form >
+    <form [formGroup]="form" >
         <p-card class="flex justify-content-center" header="Agregar producto" subheader="Aqui podras Agregar un producto" styleClass="custom-card">
             <div class="flex justify-content-between">
                 <p style="padding-right: 2rem;">Ingresa el id del producto</p>
@@ -28,7 +28,7 @@
               </div>
               <div class="flex justify-content-center">
                   <p-button
-                label="Agregar" icon="pi pi-plus" iconPos="right" ></p-button>
+                label="Agregar" icon="pi pi-plus" iconPos="right" (click)="addProduct()"></p-button>
               </div>
         </p-card>
     </form>
