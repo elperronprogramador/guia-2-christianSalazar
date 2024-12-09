@@ -1,30 +1,36 @@
+ 
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { Component, signal } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
-import { FloatLabelModule } from 'primeng/floatlabel';
-import { InputGroupModule } from 'primeng/inputgroup';
-import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { PasswordModule } from 'primeng/password';
+import { InputTextModule } from 'primeng/inputtext';
+ 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [
-    CardModule,
-    PasswordModule,
-    FloatLabelModule,
-    CommonModule,
-    FormsModule,
-    ButtonModule,
-    InputGroupAddonModule,
-    InputGroupModule,
-  ],
+  imports: [CardModule, InputTextModule, ButtonModule, ReactiveFormsModule, CommonModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.css',
 })
 export class LoginComponent {
-  value: string = ''; // Inicializa como cadena vacía
-  sizeInputs = { width: '280px', height: '30px', fontSize: '14px' };
+  title = signal('Bienvenidos a Store CH')
+  loginForm: FormGroup;
+
+  constructor(private fb: FormBuilder) {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(6)]],
+    });
+  }
+
+  onSubmit() {
+    if (this.loginForm.valid) {
+      console.log('Form Submitted', this.loginForm.value);
+    } else {
+      console.log('Form Invalid');
+    }
+  }
 }

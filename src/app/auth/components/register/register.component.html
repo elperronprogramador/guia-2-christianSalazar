@@ -1,70 +1,70 @@
-<form
-  style="
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  "
->
-  <div
-    class="card flex justify-content-center"
-    style="
-      padding: 30px;
+<div class="register-container">
+  <div class="background-text">Bienvenido a CH</div>
+  <p-card class="register-card">
+    <h2>Crear Cuenta</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input
+          id="name"
+          type="text"
+          pInputText
+          placeholder="Ingrese su nombre"
+          formControlName="name"
+        />
+        <div class="error" *ngIf="registerForm.get('name')?.invalid && registerForm.get('name')?.touched">
+          <small *ngIf="registerForm.get('name')?.errors?.['required']">El nombre es obligatorio.</small>
+          <small *ngIf="registerForm.get('name')?.errors?.['minlength']">Debe tener al menos 3 caracteres.</small>
+        </div>
+      </div>
 
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    "
-  >
-    <p-card
-      class="custom-card"
-      header="Regístrate aquí"
-      card
-      [style]="{ width: '480px' }"
-    >
-      <div class="field">
-        <label style="margin-bottom: 10px">Nombre completo</label>
+      <div class="form-group">
+        <label for="email">Email</label>
         <input
+          id="email"
           type="text"
           pInputText
-          class="w-full"
-          placeholder="Escribe tu nombre"
+          placeholder="Ingrese su email"
+          formControlName="email"
         />
+        <div class="error" *ngIf="registerForm.get('email')?.invalid && registerForm.get('email')?.touched">
+          <small *ngIf="registerForm.get('email')?.errors?.['required']">El email es obligatorio.</small>
+          <small *ngIf="registerForm.get('email')?.errors?.['email']">Ingrese un email válido.</small>
+        </div>
       </div>
-      <div class="field">
-        <label style="margin-bottom: 10px">Correo electrónico</label>
+
+      <div class="form-group">
+        <label for="password">Password</label>
         <input
-          type="text"
-          pInputText
-          formControlName="Usuario"
-          class="w-full"
-          name="usuario"
-          placeholder="Correo"
-        />
-      </div>
-      <div class="field">
-        <label style="margin-bottom: 10px">Contraseña</label>
-        <input
+          id="password"
           type="password"
           pInputText
+          placeholder="Ingrese su contraseña"
           formControlName="password"
-          class="w-full"
-          name="password"
-          placeholder="Escribe una contraseña"
         />
-      </div>
-      <div class="field">
-        <label style="margin-bottom: 10px">Confirmar Contraseña</label>
-        <input
-          type="password"
-          pInputText
-          formControlName="confirmPassword"
-          class="w-full"
-          name="confirmPassword"
-          placeholder="Confirma tu contraseña"
-        />
+        <div class="error" *ngIf="registerForm.get('password')?.invalid && registerForm.get('password')?.touched">
+          <small *ngIf="registerForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>
+          <small *ngIf="registerForm.get('password')?.errors?.['minlength']">Debe tener al menos 6 caracteres.</small>
+        </div>
       </div>
 
-      <p-button label="Registrar" iconPos="right"></p-button>
-    </p-card>
-  </div>
-</form>
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input
+          id="confirmPassword"
+          type="password"
+          pInputText
+          placeholder="Confirme su contraseña"
+          formControlName="confirmPassword"
+        />
+        <div class="error" *ngIf="registerForm.hasError('passwordsMismatch') && registerForm.get('confirmPassword')?.touched">
+          <small>Las contraseñas no coinciden.</small>
+        </div>
+      </div>
+
+      <div class="form-actions">
+        <button pButton type="submit" label="Registrar" class="register-button" [disabled]="registerForm.invalid"></button>
+      </div>
+    </form>
+  </p-card>
+</div>

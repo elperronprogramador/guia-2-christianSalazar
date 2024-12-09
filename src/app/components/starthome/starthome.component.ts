@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, EventEmitter, Output } from '@angular/core';
  
 import { ButtonModule } from 'primeng/button';
 import { CarouselModule } from 'primeng/carousel';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-starthome',
@@ -18,4 +19,16 @@ export class StarthomeComponent {
     'https://picsum.photos/1200/1200?r=41',
     'https://picsum.photos/1200/1200?r=46'
   ];
+
+  @Output() onComponentSelected = new EventEmitter<string>();
+
+  onSelectComponent(componentName: string){
+    this.onComponentSelected.emit(componentName);
+  }
+
+  constructor(private router: Router) {}
+
+  goToLogin(): void {
+    this.router.navigate(['/login']); 
+  }
 }

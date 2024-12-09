@@ -1,50 +1,42 @@
-<div class="containerLogin">
-  <p-card class="custom-card">
-    <div class="containerElements">
-      <h1>Login</h1>
-      <div class="containerInput">
-        <p-inputGroup [style]="sizeInputs">
-          <p-inputGroupAddon>
-            <i class="pi pi-user"></i>
-          </p-inputGroupAddon>
-          <p-floatLabel>
-            <input
-              [style]="sizeInputs"
-              pInputText
-              class="ng-invalid ng-dirty"
-              [(ngModel)]="value"
-            />
-            <label for="username">Username or Email</label>
-          </p-floatLabel>
-        </p-inputGroup>
-      </div>
-      <div class="containerInput">
-        <p-inputGroup [style]="sizeInputs">
-          <p-inputGroupAddon>
-            <i class="pi pi-user"></i>
-          </p-inputGroupAddon>
-          <p-floatLabel class="containerInput">
-            <p-password
-              [style]="sizeInputs"
-              pInputText
-              id="Password"
-              [(ngModel)]="value"
-            />
-            <label for="Password">Password</label>
-          </p-floatLabel>
-        </p-inputGroup>
-      </div>
-    </div>
-    <ng-template pTemplate="footer">
-      <div class="flex gap-3 mt-1">
-        <p-button
-          label="Cancel"
-          severity="secondary"
-          class="w-full"
-          styleClass="w-full "
+<div class="login-container">
+  <div class="background-text">{{title()}}</div>
+  <p-card class="login-card">
+    <h2>Iniciar Sesión</h2>
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          type="text"
+          pInputText
+          placeholder="Ingrese su email"
+          formControlName="email"
         />
-        <p-button label="Save" class="w-full" styleClass="w-full" />
+        <div class="error" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+          <small *ngIf="loginForm.get('email')?.errors?.['required']">El email es obligatorio.</small>
+          <small *ngIf="loginForm.get('email')?.errors?.['email']">Ingrese un email válido.</small>
+        </div>
       </div>
-    </ng-template>
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input
+          id="password"
+          type="password"
+          pInputText
+          placeholder="Ingrese su contraseña"
+          formControlName="password"
+        />
+        <div class="error" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+          <small *ngIf="loginForm.get('password')?.errors?.['required']">La contraseña es obligatoria.</small>
+          <small *ngIf="loginForm.get('password')?.errors?.['minlength']">Debe tener al menos 6 caracteres.</small>
+        </div>
+      </div>
+      <div class="form-actions">
+        <button pButton type="submit" label="Ingresar" class="login-button" [disabled]="loginForm.invalid"></button>
+      </div>
+    </form>
+    <div class="register-link">
+      <p>¿Aún no tienes cuenta? <a href="/register">Regístrate</a></p>
+    </div>
   </p-card>
 </div>

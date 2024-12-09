@@ -1,22 +1,81 @@
-* {
-  --colorPrimary: #1b1833;
-}
-form {
-  background-color: var(--colorPrimary);
-}
-::ng-deep .custom-card {
+.register-container {
+  position: relative;
+  height: 100vh;
+  background-color: #0b1a35; 
   display: flex;
   justify-content: center;
+  align-items: center;
 }
-p-card {
+
+.background-text {
+  position: absolute;
+  font-size: 5rem;
+  color: rgba(255, 255, 255, 0.1); 
   text-align: center;
-  display: flex;
-  justify-content: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
 }
-.field {
-  width: 90%;
-  text-align: start;
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 25px;
+
+.register-card {
+  position: relative;
+  width: 400px;
+  z-index: 1;
+  background-color: #ffffff; 
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+.register-card h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group .error {
+  color: red;
+  font-size: 0.85rem;
+}
+
+.form-actions {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.register-button {
+  background-color: #0b1a35;  
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.register-button:hover {
+  background-color: #1c2b4d;  
+}
+
+.register-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
