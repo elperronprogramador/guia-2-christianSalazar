@@ -1,1 +1,39 @@
- 
+div {
+    margin: 20px;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 5px;
+  }
+  
+  button {
+    background-color: #f44336; /* Color rojo para el botón de eliminar */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #d32f2f; /* Color más oscuro al pasar el mouse */
+  }
+.custom-card {
+    background-color: #000000; 
+    color: rgb(156, 23, 23); 
+    border-radius: 8px; 
+    padding: 1rem; 
+    margin-bottom: 20px;
+  }
+
+.container {
+    display: flex; /* Activar Flexbox */
+    justify-content: center; /* Centrado horizontal */
+    align-items: center; /* Centrado vertical */
+    height: 100vh; /* Altura total de la pantalla */
+  }

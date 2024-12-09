@@ -50,5 +50,10 @@ export const routes: Routes = [
   {
     path: 'consulta',
     component: ConsultarProductoComponent,
+  },
+  {
+    path: 'agregar',
+    component: AgregarProductoComponent,
   }
+
 ];
