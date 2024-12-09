@@ -1,8 +1,8 @@
 .content-section {
   display: flex;
   justify-content: center;
-  padding: 20px;
-  background-color:rgb(80, 140, 163);
+  padding: 10px;
+  
 }
 
 .section-card {

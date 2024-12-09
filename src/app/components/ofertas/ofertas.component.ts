@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Product } from '../../shared/models/products.models';
+import { IProduct } from '../../shared/models/products.models';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { ToastModule } from 'primeng/toast';
@@ -12,5 +12,5 @@ import { ToastModule } from 'primeng/toast';
   styleUrl: './ofertas.component.css',
 })
 export class OfertasComponent {
-  @Input({ required: true }) product!: Product;
+  @Input({ required: true }) product!: IProduct;
 }

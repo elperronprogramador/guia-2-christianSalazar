@@ -39,7 +39,7 @@ export const routes: Routes = [
     component: RegisterComponent,
   },
   {
-    path: 'agregar',
+    path: 'add',
     component: AgregarProductoComponent,
   },
   {

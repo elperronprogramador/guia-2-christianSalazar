@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
@@ -27,4 +27,10 @@ interface City {
   templateUrl: './aside.component.html',
   styleUrl: './aside.component.css',
 })
-export class AsideComponent {}
+export class AsideComponent {
+  @Output() onComponentSelected = new EventEmitter<string>();
+
+  onSelectComponent(componentName: string){
+    this.onComponentSelected.emit(componentName);
+  }
+}

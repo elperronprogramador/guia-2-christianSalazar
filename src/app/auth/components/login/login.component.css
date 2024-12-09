@@ -18,7 +18,7 @@
   width: 29.25rem;
   padding: 1.25rem;
   margin: 0;
-  background-color: red;
+  background-color: red !important;
 }
 .containerElements {
   padding: 0;
