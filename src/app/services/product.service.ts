@@ -16,4 +16,10 @@ export class ProductService {
   getProducts(): Observable<IProduct[]>{
     return this.http.get<IProduct[]>(this.apiUrl);
   }
+  
+  deleteProduct(productId: number): Observable<void> {
+    const url = `${this.apiUrl}/${productId}`; 
+    return this.http.delete<void>(url);  
+  }
+  
 }
