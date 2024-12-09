@@ -8,6 +8,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
 import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
+import { StarthomeComponent } from './components/starthome/starthome.component';
 
 export const routes: Routes = [
   {
@@ -54,6 +55,9 @@ export const routes: Routes = [
   {
     path: 'agregar',
     component: AgregarProductoComponent,
+  },
+  {
+    path: 'inicio',
+    component: StarthomeComponent,
   }
-
 ];

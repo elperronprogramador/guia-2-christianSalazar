@@ -1,1 +1,20 @@
-<p>starthome works!</p>
+ 
+<div class="hero-section">
+    <div class="carousel-container">
+      <p-carousel [value]="images" [numVisible]="1" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
+        <ng-template pTemplate="item" let-image>
+          <img [src]="image" alt="Background Image" class="carousel-image" />
+        </ng-template>
+      </p-carousel>
+    </div>
+  
+    <div class="content">
+      <h1 class="title">{{title()}}</h1>
+      <div class="containerSlogan">
+        <p class="slogan">{{slogan()}}</p>
+      </div>
+      
+      <button pButton type="button" label="Start" class="start-button"></button>
+    </div>
+  </div>
+  

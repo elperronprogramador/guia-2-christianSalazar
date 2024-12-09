@@ -1,0 +1,66 @@
+.hero-section {
+    position: relative;
+    height: 100vh;
+    background-color: #0b1a35; /* Azul muy oscuro */
+    color: #f8f5f0; /* Blanco hueso */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+  .carousel-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  .carousel-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .content {
+    
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  
+  .title {
+    font-size: 4rem;
+    margin: 0;
+    color: chartreuse;
+  }
+  .containerSlogan{
+    display: flex;
+    justify-content: center;
+  
+  }
+  .slogan {
+    font-size: 1.5rem;
+    margin: 10px 0 20px 0;
+    text-align: center;
+    width: 70%;
+  }
+  
+  .start-button {
+    background-color: #000000; 
+    color: #ffffff; 
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .start-button:hover {
+    background-color: #d3d3d3; /* Gris claro */
+    color:chartreuse ;
+  }
+  
