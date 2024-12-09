@@ -1,8 +1,10 @@
 <div class="content-section" >
-  <p-card header="{{ product.titulo }}" class="section-card">
+  <p-card header="{{ product.name }}" class="section-card">
     <img [src]="product.img" alt="" />
     <h3>Lo que Ofrecemos</h3>
     <p>{{ product.description }}</p>
+    <p>{{product.amount}}</p>
+    <p>{{product.price}}</p>
     <button>BUY</button>
   </p-card>
 </div>
