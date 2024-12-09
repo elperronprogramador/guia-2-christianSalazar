@@ -1,4 +1,4 @@
-import { Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LayoutComponent } from './components/layout/layout.component';
 import { AsideComponent } from './aside/aside.component';
 import { FooterComponent } from './shared/componets/footer/footer.component';
@@ -9,6 +9,7 @@ import { AgregarProductoComponent } from './components/agregar-producto/agregar-
 import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
 import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
 import { StarthomeComponent } from './components/starthome/starthome.component';
+import { NgModule } from '@angular/core';
 
 export const routes: Routes = [
   {
@@ -61,3 +62,4 @@ export const routes: Routes = [
     component: StarthomeComponent,
   }
 ];
+ 

@@ -1,5 +1,6 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { ListboxModule } from 'primeng/listbox';
@@ -33,4 +34,5 @@ export class AsideComponent {
   onSelectComponent(componentName: string){
     this.onComponentSelected.emit(componentName);
   }
+ 
 }
