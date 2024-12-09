@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
-import { FooterComponent } from './shared/componets/footer/footer.component';
+
 
 
 @Component({

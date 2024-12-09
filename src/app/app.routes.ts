@@ -7,6 +7,7 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
 import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
+import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
 
 export const routes: Routes = [
   {
@@ -45,5 +46,9 @@ export const routes: Routes = [
   {
     path: 'delete',
     component: EliminarProductoComponent,
+  },
+  {
+    path: 'consulta',
+    component: ConsultarProductoComponent,
   }
 ];
