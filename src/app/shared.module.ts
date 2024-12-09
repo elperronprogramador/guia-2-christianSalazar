@@ -5,8 +5,8 @@ import { SidebarModule } from 'primeng/sidebar';
 import { ButtonModule } from 'primeng/button';
 
 @NgModule({
-  declarations: [AsideComponent],
-  imports: [CommonModule, SidebarModule, ButtonModule],
+  declarations: [],
+  imports: [CommonModule, SidebarModule, ButtonModule, AsideComponent],
   exports: [AsideComponent],
 })
 export class SharedModule {}

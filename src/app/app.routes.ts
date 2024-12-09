@@ -6,6 +6,7 @@ import { HeaderComponent } from './shared/componets/header/header.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { AgregarProductoComponent } from './components/agregar-producto/agregar-producto.component';
+import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
 
 export const routes: Routes = [
   {
@@ -40,5 +41,9 @@ export const routes: Routes = [
   {
     path: 'agregar',
     component: AgregarProductoComponent,
+  },
+  {
+    path: 'delete',
+    component: EliminarProductoComponent,
   }
 ];

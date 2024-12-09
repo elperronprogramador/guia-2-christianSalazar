@@ -1,0 +1,32 @@
+/* Agregar estilos básicos para el componente eliminar-producto */
+div {
+  margin: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+button {
+  background-color: #f44336; /* Color rojo para el botón de eliminar */
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #d32f2f; /* Color más oscuro al pasar el mouse */
+}
+.custom-card {
+    background-color: #000000; /* Color de fondo */
+    color: rgb(156, 23, 23); /* Color del texto */
+    border-radius: 8px; /* Opcional: esquinas redondeadas */
+    padding: 1rem; /* Opcional: Espaciado interno */
+  }

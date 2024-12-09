@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
 import { FooterComponent } from './shared/componets/footer/footer.component';
 
+
 @Component({
   selector: 'app-root',
   standalone: true,
