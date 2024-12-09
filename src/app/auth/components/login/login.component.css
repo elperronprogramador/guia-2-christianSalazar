@@ -1,7 +1,7 @@
 .login-container {
   position: relative;
   height: 100vh;
-  background-color: #0b1a35; /* Azul muy oscuro */
+  background-color: #0b1a35; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -10,7 +10,7 @@
 .background-text {
   position: absolute;
   font-size: 5rem;
-  color: rgba(255, 255, 255, 0.1); /* Difuminado */
+  color: rgba(255, 255, 255, 0.1);  
   text-align: center;
   top: 50%;
   left: 50%;
@@ -22,7 +22,7 @@
   position: relative;
   width: 400px;
   z-index: 1;
-  background-color: #ffffff; /* Blanco */
+  background-color: #ffffff; 
   border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   padding: 20px;
@@ -61,8 +61,7 @@
 }
 
 .login-button {
-  background-color: #0b1a35; /* Azul oscuro */
-  color: #ffffff;
+  background-color: #0b1a35; 
   border: none;
   padding: 10px 20px;
   border-radius: 5px;
@@ -72,7 +71,7 @@
 }
 
 .login-button:hover {
-  background-color: #1c2b4d; /* Azul más claro */
+  background-color: #1c2b4d;  
 }
 
 .login-button:disabled {

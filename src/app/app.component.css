@@ -1,12 +1,18 @@
 @import "primeicons/primeicons.css";
+
 * {
+  
+  
+    --primaryColor:#0b1a35;
+   
+  
   margin: 0;
   box-sizing: border-box;
   padding: 0;
 }
 html,
 body {
-  height: 100%; /* Necesario para que los hijos puedan usar height: 100% */
-  margin: 0; /* Elimina márgenes por defecto */
-  padding: 0; /* Elimina rellenos por defecto */
+  height: 100%;  
+  margin: 0;  
+  padding: 0;  
 }

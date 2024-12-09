@@ -1,9 +1,10 @@
 .container {
-  background-color: black;
+  background-color: rgba(19, 16, 16, 0.863);
   display: grid;
   min-height: 100dvh;
   grid-template-rows: auto 1fr auto;
 }
+ 
 .containerContent {
   height: 2600px;
   display: flex;
@@ -11,5 +12,5 @@
 }
 .containerArticule {
   width: 100%;
-  background-color: rgb(171, 180, 208);
+  background-color: red;
 }

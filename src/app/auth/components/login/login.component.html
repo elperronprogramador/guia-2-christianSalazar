@@ -18,7 +18,7 @@
         </div>
       </div>
       <div class="form-group">
-        <label for="password">Contraseña</label>
+        <label for="password">Password</label>
         <input
           id="password"
           type="password"
@@ -33,6 +33,9 @@
       </div>
       <div class="form-actions">
         <button pButton type="submit" label="Ingresar" class="login-button" [disabled]="loginForm.invalid"></button>
+        <div *ngIf="errorMessage" class="error-message">
+          {{ errorMessage }}
+        </div>
       </div>
     </form>
     <div class="register-link">

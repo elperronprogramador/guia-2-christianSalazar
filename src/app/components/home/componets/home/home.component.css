@@ -1,5 +1,6 @@
 * {
-  background-color: rgb(171, 180, 208);
+  background-color: #0b1a35;
+  height: 100%;
 }
 body {
   margin: 0;
@@ -20,20 +21,20 @@ body {
 .intro-section {
   text-align: center;
   padding: 60px 20px;
-  
 }
 
 .content-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 20px;
+  padding: 60px;
 }
 
 .section-card {
   width: 80%;
   max-width: 800px;
-  margin: 10px 0;
+  margin: 10px ;
+ 
 }
 
 .footer-section {
@@ -70,8 +71,6 @@ p {
 }
 
 .product-item {
- 
   border-radius: 8px;  
-  padding: 10px; 
-  box-shadow: 0 2px 8px rgba(190, 155, 155, 0.1); /* Sombra */
+  box-shadow: 0 2px 8px rgba(241, 211, 211, 0.692); 
 }

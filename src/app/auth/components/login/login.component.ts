@@ -6,6 +6,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { UserService } from '../../../services/user.service';
+import {   Router } from '@angular/router';
  
 
 @Component({
@@ -18,8 +20,11 @@ import { InputTextModule } from 'primeng/inputtext';
 export class LoginComponent {
   title = signal('Bienvenidos a Store CH')
   loginForm: FormGroup;
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService,
+    private router: Router
+  ) {
     this.loginForm = this.fb.group({
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
@@ -28,9 +33,24 @@ export class LoginComponent {
 
   onSubmit() {
     if (this.loginForm.valid) {
-      console.log('Form Submitted', this.loginForm.value);
+      
+      const credentials = this.loginForm.value;
+      console.log('Attempting login with:', credentials);
+ 
+      this.userService.login(credentials).subscribe({
+        next: (response) => {
+    
+          this.router.navigate(['/home']);
+        },
+        error: (err) => {
+          console.error('Login failed:', err);
+ 
+          this.errorMessage = 'Invalid email or password';
+        },
+      });
     } else {
-      console.log('Form Invalid');
+      console.log('Form is invalid');
+      this.errorMessage = 'Please fill out the form correctly.';
     }
   }
 }

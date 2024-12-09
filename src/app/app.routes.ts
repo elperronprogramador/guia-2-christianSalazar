@@ -49,7 +49,7 @@ export const routes: Routes = [
     component: EliminarProductoComponent,
   },
   {
-    path: 'consulta',
+    path: 'search',
     component: ConsultarProductoComponent,
   },
   {

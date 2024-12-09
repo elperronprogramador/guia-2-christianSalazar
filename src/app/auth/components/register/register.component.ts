@@ -5,6 +5,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
+import { UserService } from '../../../services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -15,8 +17,10 @@ import { InputTextModule } from 'primeng/inputtext';
 })
 export class RegisterComponent {
   registerForm: FormGroup;
+  errorMessage: string = '';
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private userService: UserService, private router:Router
+  ) {
     this.registerForm = this.fb.group(
       {
         name: ['', [Validators.required, Validators.minLength(3)]],
@@ -37,9 +41,27 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      console.log('Registration Form Submitted', this.registerForm.value);
+      // Creamos el objeto de usuario con los datos del formulario
+      const userData = {
+        name: this.registerForm.value.name,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password,
+      };
+
+      // Llamamos al método register del servicio
+      this.userService.register(userData).subscribe(
+        response => {
+          console.log('User registered successfully', response);
+          // Redirigimos al login después de un registro exitoso
+          this.router.navigate(['/login']);
+        },
+        error => {
+          console.error('Error during registration:', error);
+          this.errorMessage = 'Registration failed. Please try again.';
+        }
+      );
     } else {
-      console.log('Registration Form Invalid');
+      console.log('Form Invalid');
     }
   }
 }
