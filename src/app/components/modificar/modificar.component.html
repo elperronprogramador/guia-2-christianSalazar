@@ -1,4 +1,5 @@
 <div class="containerPrincipal">
+  
     <div class="container">
         <h2 style="text-align: center;">Modify Product</h2>
         <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
@@ -33,6 +34,9 @@
           <hr>
           <button  type="submit" pButton label="Update Product" [disabled]="!isFormEnabled">Change Now</button>
         </form>
+        <div class="homeButton">
+          <p-button icon="pi pi-home" styleClass="p-button-rounded p-button-primary" (onClick)="goToHome()"></p-button>
+        </div>
       </div>
 </div>
 

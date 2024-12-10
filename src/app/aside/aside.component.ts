@@ -73,5 +73,9 @@ export class AsideComponent {
     this.router.navigate(['/add']); 
   }
   
+  goTomodificar(): void {
+    this.router.navigate(['/modificar']); 
+  }
+  
  
 }

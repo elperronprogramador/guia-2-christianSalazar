@@ -2,12 +2,14 @@ import { Component } from '@angular/core';
 import { IProduct } from '../../shared/models/products.models';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ProductService } from '../../services/product.service';
+import { ButtonModule } from 'primeng/button';
+import { Router } from '@angular/router';
  
 
 @Component({
   selector: 'app-modificar',
   standalone: true,
-  imports: [ ReactiveFormsModule],
+  imports: [ ReactiveFormsModule, ButtonModule],
   templateUrl: './modificar.component.html',
   styleUrl: './modificar.component.css'
 })
@@ -16,7 +18,7 @@ export class ModificarComponent {
   isFormEnabled: boolean = false;  
   productData: IProduct | null = null; 
 
-  constructor(private fb: FormBuilder, private productService: ProductService) {
+  constructor(private fb: FormBuilder, private productService: ProductService, private router : Router) {
     this.productForm = this.fb.group({
       id: ['', Validators.required], 
       name: [{ value: '', disabled: true }, Validators.required],
@@ -70,5 +72,8 @@ export class ModificarComponent {
     } else {
       alert('Please fill in all required fields.');
     }
+  }
+  goToHome(): void {
+    this.router.navigate(['/home']); 
   }
 }

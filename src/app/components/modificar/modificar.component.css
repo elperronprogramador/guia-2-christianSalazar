@@ -30,3 +30,8 @@
     margin-top: 10px;
   }
   
+  .homeButton{
+    justify-content: center;
+    display: flex;
+    padding: 3rem;
+    }
