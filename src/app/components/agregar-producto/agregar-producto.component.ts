@@ -6,6 +6,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { ProductService } from '../../services/product.service';
 import { IProduct } from '../../shared/models/products.models';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-agregar-producto',
@@ -17,7 +18,7 @@ import { IProduct } from '../../shared/models/products.models';
 export class AgregarProductoComponent {
   agregarForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private productService: ProductService) {
+  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router) {
     this.agregarForm = this.fb.group({
       name: ['', [Validators.required, Validators.minLength(3)]],
       description: ['', [Validators.required, Validators.minLength(10)]],
@@ -42,5 +43,9 @@ export class AgregarProductoComponent {
     } else {
       console.log('Form Invalid');
     }
+  }
+
+  goToHome(): void {
+    this.router.navigate(['/home']); 
   }
 }

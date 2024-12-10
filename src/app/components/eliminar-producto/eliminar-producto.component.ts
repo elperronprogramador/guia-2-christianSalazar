@@ -5,6 +5,7 @@ import { CardModule } from 'primeng/card';
 import { ProductService } from '../../services/product.service';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageService } from 'primeng/api';
+import { Router } from '@angular/router';
  
 
 @Component({
@@ -21,7 +22,8 @@ export class EliminarProductoComponent {
   constructor(
     private fb: FormBuilder,
     private productService: ProductService,
-    private messageService: MessageService
+    private messageService: MessageService,
+    private router:Router
     
   ) {
     this.form = this.fb.group({
@@ -57,5 +59,8 @@ export class EliminarProductoComponent {
         detail: 'Por favor ingresa un ID válido',
       });
     }
+  }
+  goToHome(): void {
+    this.router.navigate(['/home']); 
   }
 }
