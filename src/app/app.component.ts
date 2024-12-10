@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { SidebarModule } from 'primeng/sidebar';
+import { IProduct } from './shared/models/products.models';
+import { ProductService } from './services/product.service';
 
 
 
@@ -12,5 +14,5 @@ import { SidebarModule } from 'primeng/sidebar';
   styleUrl: './app.component.css',
 })
 export class AppComponent {
-  title = 'projectend';
+  
 }

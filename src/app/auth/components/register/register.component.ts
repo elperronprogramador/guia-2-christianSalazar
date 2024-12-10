@@ -56,7 +56,7 @@ export class RegisterComponent {
         },
         error => {
           console.error('Error during registration:', error);
-          this.errorMessage = 'Registration failed. Please try again.';
+          this.errorMessage = 'Registration failed. Please try again, or Email Repet';
         }
       );
     } else {

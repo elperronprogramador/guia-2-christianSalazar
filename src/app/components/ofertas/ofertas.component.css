@@ -34,3 +34,7 @@ p {
   object-fit: cover; 
  
 }
+button{
+  background-color: var(--primaryColor);
+  color: wheat;
+}
