@@ -6,12 +6,13 @@ import { ProductService } from '../../services/product.service';
 import { InputNumberModule } from 'primeng/inputnumber';
 import { MessageService } from 'primeng/api';
 import { Router } from '@angular/router';
+import { FiltroProductoComponent } from '../../shared/componets/filtro-producto/filtro-producto.component';
  
 
 @Component({
   selector: 'app-eliminar-producto',
   standalone: true,
-  imports: [ReactiveFormsModule ,FormsModule, ButtonModule, InputNumberModule,CardModule],
+  imports: [ReactiveFormsModule ,FormsModule, ButtonModule, InputNumberModule,CardModule, FiltroProductoComponent],
   providers: [MessageService],
   templateUrl: './eliminar-producto.component.html',
   styleUrl: './eliminar-producto.component.css'

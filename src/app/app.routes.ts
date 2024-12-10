@@ -12,6 +12,8 @@ import { StarthomeComponent } from './components/starthome/starthome.component';
 import { NgModule } from '@angular/core';
 import { ModificarComponent } from './components/modificar/modificar.component';
 import { UsersComponent } from './auth/components/users/users.component';
+import { filter } from 'rxjs';
+import { FiltroProductoComponent } from './shared/componets/filtro-producto/filtro-producto.component';
  
 
 export const routes: Routes = [
@@ -68,6 +70,10 @@ export const routes: Routes = [
   {
     path: 'users',
     component: UsersComponent,
+  },
+  {
+    path: 'filter',
+    component:FiltroProductoComponent,
   }
 ];
 
