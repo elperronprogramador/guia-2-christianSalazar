@@ -1,38 +1,46 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormGroup,  FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
- 
+import { InputTextModule } from 'primeng/inputtext';
+import { ProductService } from '../../services/product.service';
+import { IProduct } from '../../shared/models/products.models';
 
 @Component({
   selector: 'app-agregar-producto',
   standalone: true,
-  imports: [CardModule, ButtonModule,FormsModule, ReactiveFormsModule],
+  imports: [CardModule,InputTextModule,ButtonModule,ReactiveFormsModule, CommonModule],
   templateUrl: './agregar-producto.component.html',
   styleUrl: './agregar-producto.component.css'
 })
 export class AgregarProductoComponent {
-  form: FormGroup;
-  productos: any[]= [];
+  agregarForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group({
-      id: ['', Validators.required],
-      name: ['', Validators.required],
-      description: ['', Validators.required],
+  constructor(private fb: FormBuilder, private productService: ProductService) {
+    this.agregarForm = this.fb.group({
+      name: ['', [Validators.required, Validators.minLength(3)]],
+      description: ['', [Validators.required, Validators.minLength(10)]],
       amount: ['', [Validators.required, Validators.min(1)]],
-      img: ['', Validators.required],
-      price: ['', [Validators.required, Validators.min(1)]],
+      img: ['', [Validators.required]],
+      price: ['', [Validators.required, Validators.min(0.01)]],
     });
   }
-  addProduct(){
-    if (this.form.valid) {
-      console.log('Producto agregado:', this.form.value);
-      alert('Producto agregado exitosamente');
-      this.form.reset();  
+
+  onSubmit() {
+    if (this.agregarForm.valid) {
+      const product: IProduct = this.agregarForm.value;
+      this.productService.addProduct(product).subscribe({
+        next: (response) => {
+          console.log('Product added successfully:', response);
+          this.agregarForm.reset();
+        },
+        error: (err) => {
+          console.error('Error adding product:', err);
+        }
+      });
     } else {
-      console.error('Formulario inválido');
-      alert('Formulario inválido. Por favor, completa todos los campos correctamente.');
+      console.log('Form Invalid');
     }
   }
 }

@@ -49,7 +49,7 @@ export class HomeComponent implements OnInit  {
     //       description: 'hola como estas',
     //       price: 2300,
     //       amount: 14,
-    //       img: 'https://picsum.photos/200/200?r=53',
+    //       img: ' ',
     //     },
     //     {
     //       id: Date.now(),

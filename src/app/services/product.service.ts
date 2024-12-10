@@ -22,4 +22,7 @@ export class ProductService {
     return this.http.delete<void>(url);  
   }
   
+  addProduct(product: IProduct): Observable<IProduct> {
+    return this.http.post<IProduct>(this.apiUrl, product);
+  }
 }

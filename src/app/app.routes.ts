@@ -9,7 +9,7 @@ import { AgregarProductoComponent } from './components/agregar-producto/agregar-
 import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
 import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
 import { StarthomeComponent } from './components/starthome/starthome.component';
-import { NgModule } from '@angular/core';
+ 
 
 export const routes: Routes = [
   {
@@ -53,10 +53,7 @@ export const routes: Routes = [
     path: 'search',
     component: ConsultarProductoComponent,
   },
-  {
-    path: 'agregar',
-    component: AgregarProductoComponent,
-  },
+  
   {
     path: 'inicio',
     component: StarthomeComponent,
