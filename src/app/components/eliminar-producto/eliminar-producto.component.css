@@ -59,6 +59,7 @@ button {
   padding-top: 30px;
 }
 .homeButton{
+  justify-content: center;
   display: flex;
   padding: 3rem;
   }

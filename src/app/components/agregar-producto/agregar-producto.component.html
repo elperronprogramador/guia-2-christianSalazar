@@ -1,7 +1,5 @@
 <div class="agregar-container">
-  <div class="homeButton">
-    <p-button icon="pi pi-home" styleClass="p-button-rounded p-button-primary" (onClick)="goToHome()" ></p-button>
-  </div>
+  
     <p-card class="agregar-card">
       <h2>Agregar Producto</h2>
       <form [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
@@ -83,6 +81,9 @@
           <button pButton type="submit" label="Agregar Producto" class="add-button" [disabled]="agregarForm.invalid"></button>
         </div>
       </form>
+      <div class="homeButton">
+        <p-button icon="pi pi-home" styleClass="p-button-rounded p-button-primary" (onClick)="goToHome()" ></p-button>
+      </div>
     </p-card>
   </div>
   
