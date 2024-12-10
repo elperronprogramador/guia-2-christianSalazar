@@ -9,6 +9,7 @@ import { AgregarProductoComponent } from './components/agregar-producto/agregar-
 import { EliminarProductoComponent } from './components/eliminar-producto/eliminar-producto.component';
 import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
 import { StarthomeComponent } from './components/starthome/starthome.component';
+import { ModificarComponent } from './components/modificar/modificar.component';
  
 
 export const routes: Routes = [
@@ -57,6 +58,10 @@ export const routes: Routes = [
   {
     path: 'inicio',
     component: StarthomeComponent,
+  },
+  {
+    path: 'modificar',
+    component: ModificarComponent,
   }
 ];
  
