@@ -10,6 +10,7 @@ import { ToolbarModule } from 'primeng/toolbar';
 import { IProduct } from '../shared/models/products.models';
 import { ProductService } from '../services/product.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router';
 interface City {
   name: string;
   code: string;
@@ -38,7 +39,7 @@ export class AsideComponent {
   searchTerm: string = '';  
   searchResults: IProduct[] = []; 
 
-  constructor(private productService: ProductService) {}
+  constructor(private productService: ProductService, private router: Router ) {}
 
   onSelectComponent(componentName: string) {
     this.onComponentSelected.emit(componentName);
@@ -59,5 +60,18 @@ export class AsideComponent {
       this.searchResults = [];
     }
   }
+  goToAdd(): void {
+    this.router.navigate(['/add']); 
+  }
+  goToHome(): void {
+    this.router.navigate(['/home']); 
+  }
+  goToDelete(): void {
+    this.router.navigate(['/delete']); 
+  }
+  goToUsers(): void {
+    this.router.navigate(['/add']); 
+  }
+  
  
 }
