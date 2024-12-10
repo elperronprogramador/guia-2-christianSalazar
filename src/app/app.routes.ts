@@ -11,6 +11,7 @@ import { ConsultarProductoComponent } from './components/consultar-producto/cons
 import { StarthomeComponent } from './components/starthome/starthome.component';
 import { NgModule } from '@angular/core';
 import { ModificarComponent } from './components/modificar/modificar.component';
+import { UsersComponent } from './auth/components/users/users.component';
  
 
 export const routes: Routes = [
@@ -63,6 +64,10 @@ export const routes: Routes = [
   {
     path: 'modificar',
     component: ModificarComponent,
+  },
+  {
+    path: 'users',
+    component: UsersComponent,
   }
 ];
 
