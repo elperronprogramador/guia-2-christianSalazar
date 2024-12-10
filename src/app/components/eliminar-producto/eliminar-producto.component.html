@@ -1,27 +1,33 @@
 <div class="containerDelete" >
-  <p-card class="flex justify-content-center" header="Eliminar Producto" subheader="Aquí podrás eliminar un producto" styleClass="custom-card">
-    <form [formGroup]="form" (ngSubmit)="eliminarProducto()">
-      <div class="flex justify-content-center">
-        <label for="productoId">ID del producto a eliminar</label>
-      </div>
-      <div class="flex justify-content-center">
-        <input
-          id="productoId"
-          type="text"
-          formControlName="productoId"
-          placeholder="Escribe el ID del producto"
-          class="p-inputtext"
-        />
-      </div>
-      <div class="flex justify-content-center">
-        <p-button
-          label="Eliminar"
-          icon="pi pi-trash"
-          iconPos="right"
-          [disabled]="form.invalid"
-          type="submit"
-        ></p-button>
-      </div>
-    </form>
+  <p-card class="justify-content-center" >
+    <div style="width: 400px; height: 400px;">
+      <header style="display: flex; justify-content: center; font-weight:bolder; font-size: xx-large; padding-top: 35px;" >Eliminar producto</header>
+      <p style="display: flex; justify-content: center; padding: 2rem;">En esta seccion podras eliminar un producto</p>
+      <form [formGroup]="form" (ngSubmit)="eliminarProducto()">
+        <div class="flex justify-content-center">
+          <label for="productoId">ID del producto a eliminar</label>
+        </div>
+        <div class="divInput">
+          <input
+            id="productoId"
+            type="text"
+            formControlName="productoId"
+            placeholder="Escribe el ID del producto"
+            class="p-inputtext"
+          />
+        </div>
+        <div class="divButton">
+          <p-button
+            label="Eliminar"
+            icon="pi pi-trash"
+            iconPos="right"
+            [disabled]="form.invalid"
+            type="submit"
+            size="large"
+          ></p-button>
+        </div>
+      </form>
+    </div>
+    
   </p-card>
 </div>
