@@ -70,12 +70,14 @@ export class AsideComponent {
     this.router.navigate(['/delete']); 
   }
   goToUsers(): void {
-    this.router.navigate(['/add']); 
+    this.router.navigate(['/users']); 
   }
   
   goTomodificar(): void {
     this.router.navigate(['/modificar']); 
   }
-  
+  redirectToExternalUrl() {
+    window.open('https://github.com/elperronprogramador/guia-2-christianSalazar', '_blank');
+  }
  
 }

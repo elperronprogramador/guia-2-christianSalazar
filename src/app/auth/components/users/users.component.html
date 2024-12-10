@@ -1,5 +1,8 @@
 <div class="containerPrincipal">
     <div class="container" style="background-color: red;">
+      <div class="homeButton">
+        <p-button icon="pi pi-home" styleClass="p-button-rounded p-button-primary" (onClick)="goToHome()"></p-button>
+      </div>
         <form [formGroup]="form" (ngSubmit)="checkPermission()" class="form-container">
           <label for="code">Enter Permission Code:</label>
           <input type="text" id="code" formControlName="code" class="input-text" />

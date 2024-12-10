@@ -42,3 +42,8 @@
     background-color: #0056b3;
   }
   
+  .homeButton{
+    justify-content: center;
+  display: flex;
+  padding: 3rem;
+  }

@@ -2,10 +2,10 @@
   <div class="containerAside" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
     <p-button icon="pi pi-shop" label="Store" (click)="onSelectComponent('store')" (onClick)="goToHome()"></p-button>
     <p-button icon="pi pi-upload" label="Add" (click)="onSelectComponent('add')" (onClick)="goToAdd()"></p-button>
-    <p-button icon="pi pi-print" label="Delete" (click)="onSelectComponent('delete')" (onClick)="goToDelete()"></p-button>
+    <p-button icon="pi pi-trash" label="Delete" (click)="onSelectComponent('delete')" (onClick)="goToDelete()"></p-button>
     <p-button icon="pi pi-sync" label="Modificar" (click)="onSelectComponent('modificar')"(onClick)="goTomodificar()"></p-button>
-    <p-button icon="pi pi-users" label="Users" (click)="onSelectComponent('users')" ></p-button>
-    <p-button icon="pi pi-github" label="GitHub" (click)="onSelectComponent('github')"></p-button>
+    <p-button icon="pi pi-users" label="Users" (click)="onSelectComponent('users')" (onClick)="goToUsers()" ></p-button>
+    <p-button icon="pi pi-github" label="GitHub" (click)="redirectToExternalUrl()"></p-button>
   </div>
   
   <div style="padding-top: 15px; text-align: center; color: aliceblue;">

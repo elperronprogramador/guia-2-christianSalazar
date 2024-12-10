@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
@@ -23,7 +24,7 @@ export class UsersComponent {
 
   form: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, private router : Router) {
     this.form = this.fb.group({
       code: ['', Validators.required]
     });
@@ -35,5 +36,8 @@ export class UsersComponent {
     if (!this.permissionGranted) {
       alert('Incorrect code! Please try again.');
     }
+  }
+  goToHome(): void {
+    this.router.navigate(['/home']); 
   }
 }
