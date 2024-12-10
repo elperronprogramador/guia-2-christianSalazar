@@ -4,29 +4,57 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { ProductService } from '../../services/product.service';
 import { ButtonModule } from 'primeng/button';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
  
 
 @Component({
   selector: 'app-modificar',
   standalone: true,
-  imports: [ ReactiveFormsModule, ButtonModule],
+  imports: [ ReactiveFormsModule, ButtonModule, CommonModule],
   templateUrl: './modificar.component.html',
   styleUrl: './modificar.component.css'
 })
 export class ModificarComponent {
   productForm: FormGroup;
-  isFormEnabled: boolean = false;  
-  productData: IProduct | null = null; 
+  isFormEnabled: boolean = false;
+  productData: IProduct | null = null;
+  products: IProduct[] = [];  
+  filteredProducts: IProduct[] = [];  
 
-  constructor(private fb: FormBuilder, private productService: ProductService, private router : Router) {
+  constructor(private fb: FormBuilder, private productService: ProductService, private router: Router) {
     this.productForm = this.fb.group({
-      id: ['', Validators.required], 
+      id: ['', Validators.required],
       name: [{ value: '', disabled: true }, Validators.required],
       description: [{ value: '', disabled: true }],
       amount: [{ value: '', disabled: true }, [Validators.required, Validators.min(1)]],
       img: [{ value: '', disabled: true }],
       price: [{ value: '', disabled: true }, [Validators.required, Validators.min(0)]],
     });
+
+    this.loadProducts();
+  }
+
+  loadProducts() {
+    this.productService.getProducts().subscribe({
+      next: (products) => {
+        this.products = products;
+        this.filteredProducts = products;
+      },
+      error: (err) => console.error('Error fetching products:', err),
+    });
+  }
+
+  filterProducts(query: string) {
+    this.filteredProducts = this.products.filter(
+      (product) =>
+        product.name.toLowerCase().includes(query.toLowerCase()) ||
+        (product.id !== undefined && product.id.toString().includes(query))
+    );
+  }
+  
+  selectProduct(productId: number) {
+    this.productForm.get('id')?.setValue(productId);
+    this.searchProduct();  
   }
 
   searchProduct() {
@@ -62,7 +90,7 @@ export class ModificarComponent {
       const updatedProduct: IProduct = this.productForm.value;
       this.productService.updateProduct(updatedProduct).subscribe({
         next: () => {
-          alert('Product updated successfully Perritou!');
+          alert('Product updated successfully!');
         },
         error: (err) => {
           console.error('Error updating product:', err);
@@ -73,7 +101,8 @@ export class ModificarComponent {
       alert('Please fill in all required fields.');
     }
   }
+
   goToHome(): void {
-    this.router.navigate(['/home']); 
+    this.router.navigate(['/home']);
   }
 }

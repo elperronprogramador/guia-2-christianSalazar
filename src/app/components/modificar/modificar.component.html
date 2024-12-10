@@ -1,8 +1,9 @@
 <div class="containerPrincipal">
   
     <div class="container">
-        <h2 style="text-align: center;">Modify Product</h2>
-        <form [formGroup]="productForm" (ngSubmit)="updateProduct()">
+        <form style="margin-right: 10px;" [formGroup]="productForm" (ngSubmit)="updateProduct()">
+
+          <h2 style="text-align: center;">Modify Product</h2>
           
           <div class="form-group">
             <label for="id">Product ID</label>
@@ -33,9 +34,23 @@
       
           <hr>
           <button  type="submit" pButton label="Update Product" [disabled]="!isFormEnabled"> </button>
+          <div class="homeButton">
+            <p-button icon="pi pi-home" styleClass="p-button-rounded p-button-primary" (onClick)="goToHome()"></p-button>
+          </div>
         </form>
-        <div class="homeButton">
-          <p-button icon="pi pi-home" styleClass="p-button-rounded p-button-primary" (onClick)="goToHome()"></p-button>
+        <div class="filteredProducts">
+          <ul>
+            <h2 style="text-align: center;">Products</h2>
+            <p style="color: aquamarine; text-align: center; margin-bottom: 5px;">Enter in Item</p>
+            <li *ngFor="let product of filteredProducts" (click)="selectProduct(product.id!)">
+              <div style="display: flex;" >
+                <p> ID: {{ product.id }}</p> 
+                <p style="padding-left: 6px;"> {{ product.name }}</p>
+              </div>
+              
+              
+            </li>
+          </ul>
         </div>
       </div>
 </div>

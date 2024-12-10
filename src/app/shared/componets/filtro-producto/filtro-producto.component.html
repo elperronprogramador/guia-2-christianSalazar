@@ -1,0 +1,26 @@
+<div class="productos-container">
+    <h2 style="margin-bottom: 10px;">Products List</h2>
+ 
+    <div *ngIf="products.length > 0; else noProducts">
+      <table>
+        <thead>
+          <tr>
+            <th>Product ID</th>
+            <th>Product Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let product of products">
+            <td>{{ product.id }}</td>
+            <td>{{ product.name }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  
+    <!-- Si no hay productos, muestra este mensaje -->
+    <ng-template #noProducts>
+      <p>No products available.</p>
+    </ng-template>
+  </div>
+  

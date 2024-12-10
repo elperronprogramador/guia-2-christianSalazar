@@ -5,6 +5,8 @@
     height: 100vh;
 }
 .container {
+  display: flex;
+  justify-content: space-between;
     width: 50%;
     margin: auto;
     background-color: #2a2a42;
@@ -34,4 +36,10 @@
     justify-content: center;
     display: flex;
     padding-top: 5px;
+    }
+    .filteredProducts{
+      margin-top: 40px;
+      padding-left: 30px;
+      background-color: #cbcbe425;
+      
     }
