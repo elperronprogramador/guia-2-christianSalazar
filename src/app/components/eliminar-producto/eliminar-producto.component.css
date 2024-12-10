@@ -1,32 +1,59 @@
-.containerDelete{
+
+.containerDelete {
   background-color: var(--primaryColor);
-  height: 700px;
+  height: 800px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-div {
-  margin: 20px;
+
+
+.custom-card {
+  width: 400px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
-label {
-  display: block;
-  margin-bottom: 5px;
+
+.custom-card > * {
+  margin-bottom: 20;
 }
 
-input {
-  margin-bottom: 10px;
-  padding: 5px;
+
+.custom-card > *:last-child {
+  margin-bottom: 0;
 }
 
+.card-header {
+  font-size: 1.8rem;
+  font-weight: bolder;
+}
+
+input.p-inputtext {
+  width: 70%;
+  padding: 0.7rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  gap: 3;
+}
 button {
   color: white;
   border: none;
-  padding: 10px 15px;
   cursor: pointer;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  background-color: var(--primaryButtonColor);
 }
-.custom-card {
-  
-    border-radius: 8px; 
-    padding: 1rem;  
-  }
+.divInput {
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
+
+.divButton{
+  display: flex;
+  justify-content: center;
+  padding-top: 30px;
+}
