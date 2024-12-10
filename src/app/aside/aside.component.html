@@ -1,4 +1,4 @@
-<div class="containerp">
+<div class="containerp" >
   <div class="containerAside" style="display: flex; flex-direction: column; align-items: center; gap: 2rem;">
     <p-button icon="pi pi-shop" label="Store" (click)="onSelectComponent('store')" (onClick)="goToHome()"></p-button>
     <p-button icon="pi pi-upload" label="Add" (click)="onSelectComponent('add')" (onClick)="goToAdd()"></p-button>
@@ -8,7 +8,8 @@
     <p-button icon="pi pi-github" label="GitHub" (click)="redirectToExternalUrl()"></p-button>
   </div>
   
-  <div style="padding-top: 15px; text-align: center; color: aliceblue;">
+
+  <div style="padding-top: 35px; text-align: center; color: aliceblue; display: flex; flex-direction: column;">
     <label for="buscar">Search</label>
     <input 
     id="buscar" 
@@ -18,7 +19,7 @@
     (keyup)="onSearch()"
   />
   </div>
-  <hr>
+ 
   <div *ngIf="searchResults.length > 0" class="search-results">
     <ul>
       <li *ngFor="let product of searchResults">

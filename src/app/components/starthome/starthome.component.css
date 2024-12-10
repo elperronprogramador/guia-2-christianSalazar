@@ -1,8 +1,8 @@
 .hero-section {
     position: relative;
     height: 100vh;
-    background-color: #0b1a35; /* Azul muy oscuro */
-    color: #f8f5f0; /* Blanco hueso */
+    background-color: #0b1a35; 
+    color: #f8f5f0;  
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -60,7 +60,7 @@
   }
   
   .start-button:hover {
-    background-color: #d3d3d3; /* Gris claro */
+    background-color: #d3d3d3;  
     color:chartreuse ;
   }
   

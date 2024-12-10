@@ -1,7 +1,7 @@
-<section class="section" style="background-color: black;">
-  <div class="content-section"  >
-    <div class="product-grid" style="height: 300px;">
-      <ng-container *ngFor="let Product of products()">
+<section class="section"  >
+  <div class="content-section" style=" padding-left: 80px; padding-top: 40px; " >
+    <div class="product-grid"  >
+      <ng-container style="  margin-top: 1200px; margin-bottom: 1400px; width: 100vh;" *ngFor="let Product of products()">
         <app-ofertas [product]="Product" class="product-item" />
       </ng-container>
     </div>
