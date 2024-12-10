@@ -1,10 +1,16 @@
 <div class="content-section" >
-  <p-card header="{{ product.name }}" class="section-card">
-    <h3>Lo que Ofrecemos</h3>
+  <p-card    class="section-card">
+    <h1 style="font-size: larger; padding: 10px; text-align: center;">{{product.name}}</h1>
+    
     <img [src]="product.img" alt="" class="card-image" />
-    <p>{{ product.description }}</p>
-    <p>{{product.amount}}</p>
-    <p>{{product.price}}</p>
-    <button>BUY</button>
+    <p style="padding-left: 10px; padding-right: 10px;">{{ product.description }}</p>
+    <p style="text-align: center;"><span>Cantidad: </span>{{product.amount}}</p>
+    <p style="text-align: center;"><span>Price: $</span>{{product.price}}</p>
+    <p style="text-align: center;"><span>ID :</span>{{product.id}}</p>
+    <hr>
+    <div style="display: flex; justify-content: center;">
+      <button >BUY</button>
+    </div>
+    
   </p-card>
 </div>

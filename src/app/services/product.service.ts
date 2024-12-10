@@ -21,5 +21,12 @@ export class ProductService {
     const url = `${this.apiUrl}/${productId}`; 
     return this.http.delete<void>(url);  
   }
-  
+
+  addProduct(product: IProduct): Observable<IProduct> {
+    return this.http.post<IProduct>(this.apiUrl, product);
+  }
+  getProduct(searchTerm?: string): Observable<IProduct[]> {
+    const url = searchTerm ? `${this.apiUrl}?search=${searchTerm}` : this.apiUrl;
+    return this.http.get<IProduct[]>(url);
+  }
 }

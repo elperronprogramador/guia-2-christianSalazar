@@ -2,11 +2,12 @@
   display: flex;
   justify-content: center;
   padding: 10px;
+ 
   
 }
 
 .section-card {
-  width: 300px; 
+  width: 350px; 
   height: auto; 
   display: flex;
   justify-content: center; 

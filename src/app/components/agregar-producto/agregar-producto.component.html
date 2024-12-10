@@ -1,35 +1,85 @@
-
-<div class="container">
-    <form [formGroup]="form" >
-        <p-card class="flex justify-content-center" header="Agregar producto" subheader="Aqui podras Agregar un producto" styleClass="custom-card">
-            <div class="flex justify-content-between">
-                <p style="padding-right: 2rem;">Ingresa el id del producto</p>
-                <input type="text" style="padding-right: 10rem;" />
-              </div>
-              <div class="flex justify-content-between">
-                <p style="padding-right: 2rem;">Ingresa el nombre del producto</p>
-                <input type="text" style="padding-right: 10rem;" />
-              </div>
-              <div class="flex justify-content-between">
-                <p style="padding-right: 2rem;">Ingresa una descripcion delproducto</p>
-                <input type="text" style="padding-right: 10rem;" />
-              </div>
-              <div class="flex justify-content-between">
-                <p style="padding-right: 2rem;">Ingresa lacantidad de productos </p>
-                <input type="number" style="padding-right: 10rem;" />
-              </div>
-              <div class="flex justify-content-between">
-                <p style="padding-right: 2rem;">Ingresa una url de la imagen del producto</p>
-                <input type="text" style="padding-right: 10rem;" />
-              </div>
-              <div class="flex justify-content-between">
-                <p style="padding-right: 2rem;">Ingresa el precio del producto</p>
-                <input type="number" style="padding-right: 10rem;" />
-              </div>
-              <div class="flex justify-content-center">
-                  <p-button
-                label="Agregar" icon="pi pi-plus" iconPos="right" (click)="addProduct()"></p-button>
-              </div>
-        </p-card>
-    </form>
-</div>
+<div class="agregar-container">
+    <p-card class="agregar-card">
+      <h2>Agregar Producto</h2>
+      <form [formGroup]="agregarForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="name">Nombre</label>
+          <input
+            id="name"
+            type="text"
+            pInputText
+            placeholder="Nombre del producto"
+            formControlName="name"
+          />
+          <div class="error" *ngIf="agregarForm.get('name')?.invalid && agregarForm.get('name')?.touched">
+            <small *ngIf="agregarForm.get('name')?.errors?.['required']">El nombre es obligatorio.</small>
+            <small *ngIf="agregarForm.get('name')?.errors?.['minlength']">Debe tener al menos 3 caracteres.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Descripción</label>
+          <textarea
+            id="description"
+            pInputText
+            placeholder="Descripción del producto"
+            formControlName="description"
+          ></textarea>
+          <div class="error" *ngIf="agregarForm.get('description')?.invalid && agregarForm.get('description')?.touched">
+            <small *ngIf="agregarForm.get('description')?.errors?.['required']">La descripción es obligatoria.</small>
+            <small *ngIf="agregarForm.get('description')?.errors?.['minlength']">Debe tener al menos 10 caracteres.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="amount">Cantidad</label>
+          <input
+            id="amount"
+            type="number"
+            pInputText
+            placeholder="Cantidad"
+            formControlName="amount"
+          />
+          <div class="error" *ngIf="agregarForm.get('amount')?.invalid && agregarForm.get('amount')?.touched">
+            <small *ngIf="agregarForm.get('amount')?.errors?.['required']">La cantidad es obligatoria.</small>
+            <small *ngIf="agregarForm.get('amount')?.errors?.['min']">Debe ser al menos 1.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="img">URL de la Imagen</label>
+          <input
+            id="img"
+            type="text"
+            pInputText
+            placeholder="URL de la imagen"
+            formControlName="img"
+          />
+          <div class="error" *ngIf="agregarForm.get('img')?.invalid && agregarForm.get('img')?.touched">
+            <small *ngIf="agregarForm.get('img')?.errors?.['required']">La URL de la imagen es obligatoria.</small>
+            <small *ngIf="agregarForm.get('img')?.errors?.['pattern']">Debe ser una URL válida.</small>
+          </div>
+        </div>
+  
+        <div class="form-group">
+          <label for="price">Precio</label>
+          <input
+            id="price"
+            type="number"
+            pInputText
+            placeholder="Precio"
+            formControlName="price"
+          />
+          <div class="error" *ngIf="agregarForm.get('price')?.invalid && agregarForm.get('price')?.touched">
+            <small *ngIf="agregarForm.get('price')?.errors?.['required']">El precio es obligatorio.</small>
+            <small *ngIf="agregarForm.get('price')?.errors?.['min']">Debe ser al menos 0.01.</small>
+          </div>
+        </div>
+  
+        <div class="form-actions">
+          <button pButton type="submit" label="Agregar Producto" class="add-button" [disabled]="agregarForm.invalid"></button>
+        </div>
+      </form>
+    </p-card>
+  </div>
+  
