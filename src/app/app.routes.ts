@@ -10,6 +10,7 @@ import { EliminarProductoComponent } from './components/eliminar-producto/elimin
 import { ConsultarProductoComponent } from './components/consultar-producto/consultar-producto.component';
 import { StarthomeComponent } from './components/starthome/starthome.component';
 import { NgModule } from '@angular/core';
+import { ModificarComponent } from './components/modificar/modificar.component';
  
 
 export const routes: Routes = [
@@ -58,6 +59,10 @@ export const routes: Routes = [
   {
     path: 'inicio',
     component: StarthomeComponent,
+  },
+  {
+    path: 'modificar',
+    component: ModificarComponent,
   }
 ];
 

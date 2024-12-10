@@ -3,7 +3,7 @@
   background-color: var(--primaryColor);
   display: flex;
   flex-direction: column;
-  padding: 2.5rem;
+  padding: 1rem;
 }
 .container {
   display: flex;

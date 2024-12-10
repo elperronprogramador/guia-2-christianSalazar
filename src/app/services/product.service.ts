@@ -29,4 +29,8 @@ export class ProductService {
     const url = searchTerm ? `${this.apiUrl}?search=${searchTerm}` : this.apiUrl;
     return this.http.get<IProduct[]>(url);
   }
+  updateProduct(product: IProduct): Observable<IProduct> {
+    const url = `${this.apiUrl}/${product.id}`;
+    return this.http.put<IProduct>(url, product);
+  }
 }
