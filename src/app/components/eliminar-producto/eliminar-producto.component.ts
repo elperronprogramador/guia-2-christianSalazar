@@ -27,13 +27,13 @@ export class EliminarProductoComponent {
     
   ) {
     this.form = this.fb.group({
-      productoId: ['', [Validators.required, Validators.pattern('^[0-9]+$')]], // Validamos que sea un número
+      productoId: ['', [Validators.required, Validators.pattern('^[0-9]+$')]],  
     });
   }
 
   eliminarProducto() {
     if (this.form.valid) {
-      const productoId = Number(this.form.value.productoId); // Convertimos a número
+      const productoId = Number(this.form.value.productoId);  
       this.productService.deleteProduct(productoId).subscribe({
         next: () => {
           this.messageService.add({
@@ -41,7 +41,7 @@ export class EliminarProductoComponent {
             summary: 'Éxito',
             detail: `Producto con ID ${productoId} eliminado`,
           });
-          this.form.reset(); // Reiniciamos el formulario
+          this.form.reset(); 
         },
         error: (err) => {
           this.messageService.add({

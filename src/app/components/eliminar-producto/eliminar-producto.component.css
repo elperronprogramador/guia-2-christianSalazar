@@ -1,7 +1,7 @@
 
 .containerDelete {
   background-color: var(--primaryColor);
-  height: 800px;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -61,5 +61,5 @@ button {
 .homeButton{
   justify-content: center;
   display: flex;
-  padding: 3rem;
+  padding-top: 5px;
   }

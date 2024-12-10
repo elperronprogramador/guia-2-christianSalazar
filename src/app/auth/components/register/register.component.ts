@@ -41,18 +41,17 @@ export class RegisterComponent {
 
   onSubmit() {
     if (this.registerForm.valid) {
-      // Creamos el objeto de usuario con los datos del formulario
+      
       const userData = {
         name: this.registerForm.value.name,
         email: this.registerForm.value.email,
         password: this.registerForm.value.password,
       };
-
-      // Llamamos al método register del servicio
+ 
       this.userService.register(userData).subscribe(
         response => {
           console.log('User registered successfully', response);
-          // Redirigimos al login después de un registro exitoso
+     
           this.router.navigate(['/login']);
         },
         error => {
