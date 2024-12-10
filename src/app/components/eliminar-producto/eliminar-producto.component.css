@@ -46,6 +46,7 @@ button {
   border-radius: 4px;
   background-color: var(--primaryButtonColor);
 }
+/* push */
 .divInput {
   display: flex;
   justify-content: center;
