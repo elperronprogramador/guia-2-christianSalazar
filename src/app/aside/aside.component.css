@@ -1,6 +1,9 @@
 .containerp {
   height: 100%;
   background-color: var(--primaryColor);
+  display: flex;
+  flex-direction: column;
+  padding: 2.5rem;
 }
 .container {
   display: flex;
@@ -15,4 +18,18 @@
  
 }
  
- 
+.search-results {
+  margin-top: 1rem;
+  color: white;
+  text-align: center;
+}
+
+.search-results ul {
+  list-style: none;
+  padding: 0;
+}
+
+.search-results li {
+  margin: 0.5rem 0;
+}
+

@@ -26,8 +26,8 @@ body {
 .content-section {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 60px;
+  padding: 30px;
+
 }
 
 .section-card {
@@ -60,7 +60,6 @@ p {
   text-align: justify;
 }
  
-
 .p-button-outlined {
   font-weight: bold;
 }
@@ -68,6 +67,7 @@ p {
   display: grid;
   grid-template-columns: repeat(3, 2fr); 
   gap: 10px;  
+  width: 50px;
 }
 
 .product-item {
